@@ -1,0 +1,47 @@
+<ion-header>
+  
+</ion-header>
+
+<ion-content>
+   
+   
+  <form class="formstyle" style="position: left " [(formGroup)]="loginForm"  (ngSubmit)="onSubmit(loginForm.value)">
+<ion-card>
+  <div>
+    <h2><span>Registration</span></h2>
+  </div>
+    <br>
+    <!-- Name -->
+    <ion-item>
+      <ion-input type="text" name="name" formControlName="name"  placeholder="Name">
+     </ion-input>
+     </ion-item>
+     <!-- Email -->
+    <ion-item>
+      <ion-input type="text" name="email" formControlName="email"  placeholder="Email Id">
+     </ion-input>
+     </ion-item>
+    <ion-item lines="full">
+      <ion-input type="password" required class="field" formControlName="password" placeholder="Password">  
+      </ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-input type="password" required class="field" formControlName="password1" placeholder="Confirm-Password">  
+      </ion-input>
+    </ion-item>
+    
+
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" color="tertiary"  [disabled]="loginForm.invalid"  (click)="expression()">Registration</ion-button>
+        <ion-item>
+        <ion-label>If You Have account Please login ==></ion-label>
+        <ion-button [routerLink]="['/login']" expand="block" color="danger">Log In</ion-button>
+      </ion-item>
+      </ion-col>
+    </ion-row>
+    <br>
+    <br>
+  </ion-card>
+  </form>
+</ion-content>

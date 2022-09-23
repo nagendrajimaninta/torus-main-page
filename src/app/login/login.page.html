@@ -1,0 +1,58 @@
+<ion-header>
+  
+</ion-header>
+
+<ion-content>
+   
+   
+  <form class="formstyle" style="position: left " [(formGroup)]="loginForm"  (ngSubmit)="onSubmit(loginForm.value)">
+<ion-card>
+  <div>
+    <h2><span>Login</span></h2>
+  </div>
+    
+    <br>
+    <ion-item>
+      <ion-input type="text" name="email" formControlName="email"  placeholder="Email Id">
+      <!-- <ion-icon name="mail-outline"></ion-icon> -->
+     </ion-input>
+     </ion-item>
+    <!-- <ng-container *ngFor="let validation of loginForm.email">
+      <div class="error_message" *ngIf="loginForm.get('email').hasError(validation.type) && (loginForm.get('email').dirty || loginForm.get('email').touched)">
+         {{validation.message}}
+      </div>
+</ng-container> -->
+    <!-- <div *ngFor="let er of errors">
+      <ng-container **ngIf="loginForm.get('email').hasError('er.type') && (loginForm.get('email').hasError.touched || loginForm.get('email').dirty)">
+           {{er.message}}
+      </ng-container>
+      
+    </div> -->
+    <!-- <br> -->
+    <ion-item lines="full">
+      <ion-input type="password" required class="field" formControlName="password" placeholder="Password">  
+      </ion-input>
+    </ion-item>
+    <!-- <br> -->
+    
+<!-- Test Nagendra -->
+
+<!-- Test Nagendra -->
+
+
+    <ion-row>
+      <ion-col>
+        <!-- <ion-button type="submit" color="tertiary"  expand="block" [routerLink]="['/registration']" (click)="expression()">LOGIN</ion-button> -->
+        <ion-button type="submit" color="tertiary" [disabled]="loginForm.invalid"  (click)="loginSubmit(loginForm.value)">LOGIN</ion-button>
+        <ion-item>       
+        <ion-label style="float: right;" color="dark">If You Don't Have Account Please Register ==></ion-label>
+        <ion-button [routerLink]="['/registration']" expand="block" color="primary">Register</ion-button>
+      </ion-item>
+      </ion-col>
+      
+    </ion-row>
+    <br>
+    <br>
+  </ion-card>
+  </form>
+</ion-content>
